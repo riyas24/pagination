@@ -10,6 +10,8 @@ export default function MultiselectSearch({ selected, setSelected, showSuggestio
             setSuggestion(suggestion.filter(item => item !== value));
         if (selected.includes(value))
             setSelected(selected.filter(item => item !== value));
+        if (suggestion.length === 1)
+            setShowSuggestion(false)
     };
 
     const handleSelected = (value) => {
